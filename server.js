@@ -8,7 +8,8 @@ const leadroutes = require('./routes/LeadRoutes');
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+//cors allow all origins
+app.use(cors());
 // Middleware
 app.use(bodyParser.json());
 app.use('/api/lead', leadroutes);
