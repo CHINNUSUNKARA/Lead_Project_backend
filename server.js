@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const leadroutes = require('./routes/LeadRoutes');
-
+const cors = require('cors');
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
