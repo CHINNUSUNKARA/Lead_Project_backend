@@ -4,6 +4,7 @@ const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const leadroutes = require('./routes/LeadRoutes');
+const webhookroutes = require('./routes/WebHooksRoutes');
 const cors = require('cors');
 dotenv.config();
 const app = express();
@@ -13,6 +14,7 @@ app.use(cors());
 // Middleware
 app.use(bodyParser.json());
 app.use('/api/lead', leadroutes);
+app.use('/api/webhook', webhookroutes);
 
 app.get('/', (req, res) => {
   res.send('API is working!');
