@@ -14,6 +14,9 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use('/api/lead', leadroutes);
 
+app.get('/', (req, res) => {
+  res.send('API is working!');
+});
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
